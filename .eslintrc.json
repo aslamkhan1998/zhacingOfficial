@@ -20,6 +20,8 @@
         "constructor-super": "warn",
         "valid-typeof": "warn"
     },
+    "parser": "babel-eslint",
+    
     "plugins": [
         "react"
     ]

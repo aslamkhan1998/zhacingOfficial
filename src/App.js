@@ -1,24 +1,31 @@
+/* eslint-disable no-unused-vars */
 import React, { Component } from "react";
 import { ExpenseList, ExpenseForm, LoadingBar } from "./components/index";
 import { MDCSnackbar } from "@material/snackbar/dist/mdc.snackbar.js";
+import {SiGooglesheets} from "react-icons/si";
 
 import "@material/fab/dist/mdc.fab.css";
 import "@material/button/dist/mdc.button.css";
 import "@material/toolbar/dist/mdc.toolbar.css";
 import "@material/snackbar/dist/mdc.snackbar.css";
 import "@material/card/dist/mdc.card.css";
+import "@material/fab/dist/mdc.fab-1.css";
 
 import "./App.css";
+
+
 
 class App extends Component {
   constructor() {
     super();
-
+    
     this.clientId =
-      "826265862385-p41e559ccssujlfsf49ppmo0gktkf6co.apps.googleusercontent.com";
+      "622709193879-03d8ns246attv64khmpo0sp60jke1qaf.apps.googleusercontent.com"; /*622709193879-03d8ns246attv64khmpo0sp60jke1qaf.apps.googleusercontent.com*/
     this.spreadsheetId =
       process.env.REACT_APP_SHEET_ID ||
-      "1eYrQf0xhs2mTSWEzQRfSM-MD-tCcx1r0NVEacLg3Jrc";
+      "1aFkjpZ6Dpsgxsp0KECTHlHQ1OXUjGn6LhmoZSUjJEIE"; /*1aFkjpZ6Dpsgxsp0KECTHlHQ1OXUjGn6LhmoZSUjJEIE*/
+
+    this.openWin = this.openWin.bind(this); /*added*/
 
     this.state = {
       signedIn: undefined,
@@ -29,10 +36,20 @@ class App extends Component {
       expense: {},
       currentMonth: undefined,
       previousMonth: undefined,
-      showExpenseForm: false
+      showExpenseForm: false,
+      valueData: undefined, //added
+      initialsavingsData: undefined, //added
+      initialchequingData: undefined, //added
+      valueChequing: undefined //added
     };
 
+
   }
+  openWin(){
+    window.open("https://docs.google.com/spreadsheets/d/1aFkjpZ6Dpsgxsp0KECTHlHQ1OXUjGn6LhmoZSUjJEIE/edit#gid=0");
+
+  } /*added*/
+
 
   componentDidMount() {
     window.gapi.load("client:auth2", () => {
@@ -138,6 +155,7 @@ class App extends Component {
       );
   }
 
+
   handleExpenseSelect = (expense) => {
     this.setState({ expense: expense, showExpenseForm: true });
   }
@@ -207,16 +225,20 @@ class App extends Component {
     });
   }
 
-  load() {
+  load() { //To get data from Google Sheets
     window.gapi.client.sheets.spreadsheets.values
       .batchGet({
         spreadsheetId: this.spreadsheetId,
         ranges: [
-          "Data!A2:A50",
-          "Data!E2:E50",
-          "Expenses!A2:F",
-          "Current!H1",
-          "Previous!H1"
+          "Data!A2:A50", //Accounts in Data sheet
+          "Data!E2:E50", //Categories in Data sheet
+          "Expenses!A2:F", //Expenses sheet
+          "Current!H1", //Total in Current sheet
+          "Previous!H1", //Total in Previous sheet
+          "Data!B3", //added Savings value in Data sheet
+          "Data!C3", //added Initial savings account value in Data sheet
+          "Data!C2", //added Initial chequing account value in Data sheet
+          "Data!B2" //added Current chequing balance value in Data sheet
         ]
       })
       .then(response => {
@@ -235,7 +257,12 @@ class App extends Component {
             .slice(0, 30),
           processing: false,
           currentMonth: response.result.valueRanges[3].values[0][0],
-          previousMonth: response.result.valueRanges[4].values[0][0]
+          previousMonth: response.result.valueRanges[4].values[0][0],
+          valueData: response.result.valueRanges[5].values[0][0], //added
+          initialsavingsData:response.result.valueRanges[6].values[0][0], //added
+          initialchequingData:response.result.valueRanges[7].values[0][0], //added
+          valueChequing:response.result.valueRanges[8].values[0][0] //added
+         
         });
       });
   }
@@ -246,7 +273,7 @@ class App extends Component {
         <header className="mdc-toolbar mdc-toolbar--fixed">
           <div className="mdc-toolbar__row">
             <section className="mdc-toolbar__section mdc-toolbar__section--align-start">
-              <span className="mdc-toolbar__title">Expenses</span>
+              <span className="mdc-toolbar__title">zhaCing</span>
             </section>
             <section
               className="mdc-toolbar__section mdc-toolbar__section--align-end"
@@ -345,17 +372,54 @@ class App extends Component {
     else
       return (
         <div>
-          <div className="mdc-card">
-            <section className="mdc-card__primary">
-              <h2 className="mdc-card__subtitle">This month you've spent:</h2>
-              <h1 className="mdc-card__title mdc-card__title--large center">
-                {this.state.currentMonth}
-              </h1>
-            </section>
-            <section className="mdc-card__supporting-text">
-              Previous month: {this.state.previousMonth}
-            </section>
+          <div className="BOX">
+            <div className="mdc-box0">
+              <section className="initialvalue-text">Initial savings:</section>
+              <section className="initialvalue-data">{this.state.initialsavingsData}</section>
+            </div>
+            <div className="mdc-box0_1">
+              <section className="initialvalue-text">Initial chequing:</section>
+              <section className="initialvalue-data">{this.state.initialchequingData}</section>
+            </div>
+            <div className="mdc-box1">
+              <section className="thismonth-text">Spent this month:</section>
+              <section className="thismonth-data">{this.state.currentMonth}</section> 
+            </div>
+            <div className="mdc-box2">
+              <section className="previousmonth-text">Spent last month:</section>
+              <section className="previousmonth-data">{this.state.previousMonth}</section>
+            </div>
+            <div className="mdc-box3">
+              <section className="accbalance-text">Account balance:</section>        
+              <section className="savingsbalance-text">Savings acc:{"\n"}{this.state.valueData}</section>
+              <section className="chequingbalance-text">Chequing acc:{"\n"}{this.state.valueChequing}</section>
+            </div>
+                        
           </div>
+
+              <button 
+                onClick={this.openWin}
+                className="mdc-fab-1 button-sheet material-icons"
+                aria-label="Spreadsheet" 
+                >
+                <span className="mdc-fab-1 button-sheet__icons">
+                  <SiGooglesheets
+                  color='white'
+                  size='2rem'
+                  style={{
+                    verticalAlign:'middle',
+                    backgroundColor:'none',
+                    position:'fixed',
+                    top:'20%',
+                    right:'0%'
+                    
+
+
+                  }}
+                  ></SiGooglesheets></span>    
+              </button>
+
+
           <ExpenseList
             expenses={this.state.expenses}
             onSelect={this.handleExpenseSelect}
@@ -367,6 +431,7 @@ class App extends Component {
           >
             <span className="mdc-fab__icon">add</span>
           </button>
+          
         </div>
       );
   }

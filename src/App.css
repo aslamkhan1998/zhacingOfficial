@@ -4,6 +4,12 @@
   right: 1rem;
 }
 
+.button-sheet{
+  position:fixed;
+  bottom:5rem;
+  right:1rem;
+}
+
 header.mdc-toolbar {
   background-color: #50d29d;
 }
@@ -14,27 +20,204 @@ button.mdc-toolbar__icon {
 .toolbar-adjusted-content {
   margin-top: 70px;
 }
-.mdc-card {
-  margin: 0.5em;
-  background: white;
+
+.mdc-toolbar__title{
+  color:white;
+  font-size:130%;
+  font-weight:bold;
 }
-.mdc-card__title {
-  margin: 0.5em 0;
-  font-size: 200%;
-  color: #20b1d6;
+
+.mdc-box0{
+  width: 45%;
+  height: 80px;
+  background-color: rgb(255, 94, 0);
+  margin-left: 50%;
+  border-radius: 15px;
+  position: absolute;
+  margin-bottom:0.5%; 
 }
-.mdc-card__supporting-text {
-  color: #7a7a7a;
+.initialvalue-text{
+  color: white;
+  font-weight:bold;       /*bold*/
+  font-size: 130%;
+  text-align: center;
+  padding-top:1%; 
 }
-.mdc-card__supporting-text:last-child {
-  padding-bottom: 8px;
+.initialvalue-data{
+  color: white;
+  font-size: 130%;
+  text-align: center;
+  font-weight: bold;  
 }
+.mdc-box0_1{
+  width: 45%;
+  height: 80px;
+  background-color: #e01f5b;
+  margin-left: 5%;
+  border-radius: 15px;
+  position: static; top:10%;
+  margin-bottom:0.5%;  
+}
+
+.mdc-box1{
+  width: 90%;
+  height: 80px;
+  background-color: orange;
+  margin-left: 5%;
+  border-radius: 15px;
+  position: static; /*top: 10px; left: 10px;*/
+  margin-bottom:0.5%;
+}
+.thismonth-text{
+  color: white;
+  font-weight:bold;     /*bold*/
+  font-size: 130%;
+  text-align: center;
+  padding-top:1%;
+}
+.thismonth-data{
+  color: white;
+  font-size:130%;
+  text-align: center;
+  font-weight: bold;  
+}
+
+.mdc-box2{
+  width: 90%;
+  height: 80px;
+  background-color: rgb(196, 196, 20);
+  margin-left:5%;
+  margin-bottom:0.5%;
+  border-radius: 15px;
+  position: relative;  /*left: 210px; bottom: 70px; */
+}
+
+.previousmonth-text{
+  color: white;
+  font-weight:bold;       /*bold*/
+  font-size: 130%;
+  text-align: center;
+  padding-top:1%;
+}
+
+.previousmonth-data{
+  color: white;
+  font-size: 130%;
+  text-align: center;
+  font-weight: bold;  
+}
+
+.mdc-box3{
+  width: 90%;
+  height: 160px;
+  background-color:rgb(240, 6, 65) ;
+  margin-left:5%;
+  border-radius: 15px;
+  position: static;      /* left : 410px bottom: 150px*/
+  margin-bottom:1%;
+  padding-bottom:1%;
+}
+.mdc-box3_1{
+  width: 40%;
+  height: 80px;
+  background-color:rgb(2, 0, 0) ;
+  margin-left:5%;
+  border-radius: 15px;
+  position: static; top: 50%; left: 3%;
+}
+
+.mdc-box3_2{
+  position:relative;
+  top: 46.9%;
+  width:40%;
+  background-color:greenyellow;
+  right:10%;
+}
+
+.accbalance-text{
+  color:white;
+  text-align:center;
+  font-weight:bold;     /*bold*/
+  font-size:130%;
+  padding-top:2%;
+}
+.chequingbalance-text{
+  color:white;
+  width: 45%;
+  height:80px;
+  background-color:black;
+  text-align: center;
+  font-size:130%;
+  padding-top:1%;
+  border-radius:15px;
+  float:left;
+  margin-left:3%;
+  margin-top:1%;
+  font-weight: bold;
+}
+
+
+.savingsbalance-text{
+  color:white;
+  width: 45%;
+  height:80px;
+  background-color:black;
+  text-align: center;
+  margin-top: 1%;
+  margin-left: 3.5%;
+  font-size:130%;
+  padding-top: 1%;
+  float:left;
+  border-radius:15px;
+  font-weight: bold;
+}
+
+
+.currentbalance-data:last-child{
+  padding: 8px;
+}
+.previousmonth-data:last-child{
+  padding: 8px;
+}
+.thismonth-data:last-child{
+  padding: 8px;
+}
+.initialvalue-data:last-child{
+  padding: 8px;
+}
+
 .center {
   text-align: center;
 }
 button.sign-in {
   margin: 2em auto;
+  background-color:#50d29d;
+  color: white;
+  font-size: 1.2em;
+  border-radius: 5px;
 }
+
+/*.button1{
+  border-radius:10px;
+  display: inline-block;
+  font-size:100%;
+}
+
+.button-sheet{
+  width:10%;
+  height: 40px;
+  background-color: #188038;
+  position:fixed;
+  right:3%;
+  top: 78%;
+  border-radius:10px;
+  color:white;
+  text-align: center;
+  font-size:100%;
+  border: 0;
+}
+*/
+
 a.material-icons {
   cursor: pointer;
 }
@@ -42,9 +225,32 @@ a.material-icons {
   display: inline-block;
 }
 
+
+.mdc-fab-1{
+  display: inline-block;
+  background-color: #188038;
+  color:white;
+  text-align: center;
+}
+
 @media (min-width: 1024px) {
   .app-fab--absolute {
     bottom: 3rem;
     right: 5rem;
   }
+}
+
+
+@media all and (min-width:1024px) {
+  .button-sheet{
+    bottom:7rem;
+    right:5rem;
+    color:white;
+    background-color: #188038;
+
+  }
+}
+
+.button-sheet:hover{
+  box-shadow:  0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }

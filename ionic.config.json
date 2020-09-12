@@ -1,0 +1,7 @@
+{
+    "name": "zhacing",
+    "integrations": {
+      "capacitor": {}
+    },
+    "type": "react"
+  }
