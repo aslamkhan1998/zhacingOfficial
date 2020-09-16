@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/zhacingOfficial/static/css/main.27e77091.chunk.css",
+    "main.js": "/zhacingOfficial/static/js/main.d6c2d0c3.chunk.js",
+    "main.js.map": "/zhacingOfficial/static/js/main.d6c2d0c3.chunk.js.map",
+    "runtime-main.js": "/zhacingOfficial/static/js/runtime-main.7884c2c9.js",
+    "runtime-main.js.map": "/zhacingOfficial/static/js/runtime-main.7884c2c9.js.map",
+    "static/css/2.b3d9b814.chunk.css": "/zhacingOfficial/static/css/2.b3d9b814.chunk.css",
+    "static/js/2.f22a5368.chunk.js": "/zhacingOfficial/static/js/2.f22a5368.chunk.js",
+    "static/js/2.f22a5368.chunk.js.map": "/zhacingOfficial/static/js/2.f22a5368.chunk.js.map",
+    "index.html": "/zhacingOfficial/index.html",
+    "precache-manifest.e555bea175e8ef59979eb8a844bae7bb.js": "/zhacingOfficial/precache-manifest.e555bea175e8ef59979eb8a844bae7bb.js",
+    "service-worker.js": "/zhacingOfficial/service-worker.js",
+    "static/css/2.b3d9b814.chunk.css.map": "/zhacingOfficial/static/css/2.b3d9b814.chunk.css.map",
+    "static/css/main.27e77091.chunk.css.map": "/zhacingOfficial/static/css/main.27e77091.chunk.css.map",
+    "static/js/2.f22a5368.chunk.js.LICENSE.txt": "/zhacingOfficial/static/js/2.f22a5368.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.7884c2c9.js",
+    "static/css/2.b3d9b814.chunk.css",
+    "static/js/2.f22a5368.chunk.js",
+    "static/css/main.27e77091.chunk.css",
+    "static/js/main.d6c2d0c3.chunk.js"
+  ]
+}
