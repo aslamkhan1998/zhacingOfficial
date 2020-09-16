@@ -1,4 +1,4 @@
-💰Expenses is a [progressive web application](https://developers.google.com/web/progressive-web-apps/) on top of [Google Sheets](https://developers.google.com/sheets/) 📉 written in [React](https://facebook.github.io/react/) ⚛️. It is only a static HTML that works great on mobile 📱 and can be deployed anywhere.
+💰zhaCing is a [progressive web application](https://developers.google.com/web/progressive-web-apps/) on top of [Google Sheets](https://developers.google.com/sheets/) 📉 written in [React](https://facebook.github.io/react/) ⚛️. It is only a static HTML that works great on mobile 📱 and can be deployed anywhere.
 
 ![Delete expense](doc/delete-expense.gif)
 
@@ -17,8 +17,6 @@ It was inspired by the [expense-manager](https://github.com/mitul45/expense-mana
   * Progressive Web App. Loads quickly and works as a standalone app.
 * Beautiful material design
   * Better than native ;)
-* Recurring expenses
-  * Totally doable with [Zapier](http://zapier.com/).
 * Monthly summary
   * This month. Last month. You immediately know how you doing.
 
@@ -37,22 +35,11 @@ npm i && REACT_APP_SHEET_ID=<replace with your sheet id> npm run build
 
 4) copy the content of `build` folder to your server
 
-### Recurring Expenses
-
-Zapier is a service for connecting apps and automating your workflows. And it can be used to add recurring expenses with the [Google Sheets Integrations](https://zapier.com/zapbook/google-sheets/).
-
-Select a trigger – it could be every month, week, or based on anything else.
-
-Use the `Create Spreadsheet Row` integration and select your expense sheet and fill it with the desired values. Easy.
-
-![Zapier setup for recurring expenses](doc/zapier.png)
-
 ### Sharing
 
 Adding another person (for example your partner) to the app is easy – you just give them access to the expense sheet in Google Sheets.
 
 After that, they have the same access as you are and can add expenses through the same URL.
 
----
 
-If you like this project – you might also enjoy [React Digest](https://reactdigest.net/) newsletter 🗞. Subscribe to get the top 5 news from React community every week.
+
